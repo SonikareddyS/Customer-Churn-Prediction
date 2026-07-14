@@ -286,4 +286,4 @@ If you found this project useful, please consider giving this repository a ⭐ o
 
 GitHub: https://github.com/SonikareddyS
 
-LinkedIn: https://www.linkedin.com/in/your-profile
+LinkedIn: https://linkedin.com/in/sonikareddys/
