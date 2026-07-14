@@ -5,6 +5,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import joblib
+import os
 
 # ==========================================================
 # Create Flask App
@@ -16,9 +17,12 @@ app = Flask(__name__)
 # Load Saved Model
 # ==========================================================
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_DIR = os.path.join(BASE_DIR, "..", "models")
+
 try:
-    model = joblib.load("../models/churn_prediction_model.pkl")
-    scaler = joblib.load("../models/scaler.pkl")
+    model = joblib.load(os.path.join(MODEL_DIR, "churn_prediction_model.pkl"))
+    scaler = joblib.load(os.path.join(MODEL_DIR, "scaler.pkl"))
 
     print("✅ Model Loaded Successfully")
 
@@ -27,14 +31,12 @@ except Exception as e:
     print("❌ Error Loading Model")
     print(e)
 
-
 # ==========================================================
 # Home Route
 # ==========================================================
 
 @app.route("/")
 def home():
-
     return render_template("index.html")
 
 
@@ -47,9 +49,9 @@ def predict():
 
     try:
 
-        # ===========================
+        # ==================================================
         # Read User Inputs
-        # ===========================
+        # ==================================================
 
         credit_score = float(request.form["credit_score"])
         country = float(request.form["country"])
@@ -62,9 +64,9 @@ def predict():
         active_member = float(request.form["active_member"])
         estimated_salary = float(request.form["estimated_salary"])
 
-        # ===========================
+        # ==================================================
         # Input Validation
-        # ===========================
+        # ==================================================
 
         if not (300 <= credit_score <= 900):
             return render_template(
@@ -96,9 +98,9 @@ def predict():
                 error="Estimated Salary cannot be negative."
             )
 
-        # ===========================
+        # ==================================================
         # Prepare Input
-        # ===========================
+        # ==================================================
 
         customer = np.array([[
             credit_score,
@@ -113,30 +115,33 @@ def predict():
             estimated_salary
         ]])
 
-        # Scale Input
+        # ==================================================
+        # Scale Features
+        # ==================================================
+
         customer = scaler.transform(customer)
 
-        # ===========================
+        # ==================================================
         # Prediction
-        # ===========================
+        # ==================================================
 
         prediction = model.predict(customer)[0]
 
         probability = model.predict_proba(customer)[0][1]
         probability = round(probability * 100, 2)
 
-        # ===========================
+        # ==================================================
         # Prediction Result
-        # ===========================
+        # ==================================================
 
         if prediction == 1:
             result = "⚠ Customer is likely to Churn"
         else:
             result = "✅ Customer is likely to Stay"
 
-        # ===========================
+        # ==================================================
         # Risk Level
-        # ===========================
+        # ==================================================
 
         if probability >= 80:
 
@@ -145,7 +150,7 @@ def predict():
 
             recommendation = (
                 "Immediately contact the customer, "
-                "assign a relationship manager and "
+                "assign a relationship manager, and "
                 "offer premium retention benefits."
             )
 
@@ -155,7 +160,7 @@ def predict():
             risk_color = "#dc2626"
 
             recommendation = (
-                "Offer loyalty rewards, cashback offers "
+                "Offer loyalty rewards, cashback offers, "
                 "and proactive customer support."
             )
 
@@ -179,34 +184,24 @@ def predict():
                 "Continue premium banking experience."
             )
 
-        # ===========================
+        # ==================================================
         # Render Result
-        # ===========================
+        # ==================================================
 
         return render_template(
-
             "index.html",
-
             prediction=result,
-
             probability=probability,
-
             risk=risk,
-
             risk_color=risk_color,
-
             recommendation=recommendation
-
         )
 
     except Exception as e:
 
         return render_template(
-
             "index.html",
-
             error=f"Unexpected Error: {e}"
-
         )
 
 
@@ -215,7 +210,4 @@ def predict():
 # ==========================================================
 
 if __name__ == "__main__":
-
-    app.run(
-        debug=True
-    )
+    app.run(host="0.0.0.0", port=5000, debug=True)
