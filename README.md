@@ -1,88 +1,223 @@
 # 🏦 Customer Churn Prediction using Machine Learning
 
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![Flask](https://img.shields.io/badge/Flask-Web%20App-black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
+
 ## 📌 Project Overview
 
-This project predicts whether a bank customer is likely to churn using Machine Learning. The application is built using Python, Scikit-Learn, Flask, HTML, CSS, and JavaScript.
+Customer Churn Prediction is a Machine Learning web application that predicts whether a bank customer is likely to leave the bank based on customer information.
+
+The project follows the complete Machine Learning lifecycle:
+
+- Data Collection
+- Data Preprocessing
+- Exploratory Data Analysis (EDA)
+- Model Training
+- Model Evaluation
+- Model Deployment using Flask
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-- Customer Churn Prediction
-- Machine Learning Model
-- Flask Web Application
-- Risk Level Prediction
-- Churn Probability
-- Responsive UI
-- Input Validation
+✅ Customer Churn Prediction
+
+✅ Churn Probability Score
+
+✅ Risk Level Detection
+
+✅ Personalized Recommendation
+
+✅ Input Validation
+
+✅ Responsive Web Interface
+
+✅ Machine Learning Integration
 
 ---
 
-## 🛠️ Tech Stack
+# 🛠 Tech Stack
+
+### Programming
 
 - Python
-- Flask
+
+### Machine Learning
+
 - Scikit-Learn
 - Pandas
 - NumPy
+
+### Data Visualization
+
 - Matplotlib
 - Seaborn
-- HTML
-- CSS
+
+### Backend
+
+- Flask
+
+### Frontend
+
+- HTML5
+- CSS3
 - JavaScript
+
+### Model Saving
+
+- Joblib
 
 ---
 
-## 📂 Project Structure
+# 📊 Dataset Features
 
-```text
-Customer-Churn-Prediction/
-│
-├── app/
-│   ├── app.py
-│   ├── templates/
-│   └── static/
-│
-├── data/
-├── models/
-├── notebooks/
-├── reports/
-│
-├── README.md
-├── requirements.txt
+| Feature | Description |
+|----------|-------------|
+| Credit Score | Customer Credit Score |
+| Country | France, Germany, Spain |
+| Gender | Male/Female |
+| Age | Customer Age |
+| Tenure | Years with Bank |
+| Balance | Account Balance |
+| Products Number | Bank Products Used |
+| Credit Card | Has Credit Card |
+| Active Member | Active Customer |
+| Estimated Salary | Estimated Annual Salary |
+
+### Target
+
+```
+0 → Customer Stays
+
+1 → Customer Churns
 ```
 
 ---
 
-## 📊 Machine Learning Workflow
+# 🤖 Machine Learning Workflow
 
-- Data Cleaning
-- Exploratory Data Analysis
-- Feature Engineering
-- Label Encoding
-- Feature Scaling
-- Model Training
-- Model Evaluation
-- Model Saving
-- Flask Deployment
+```
+Dataset
+    │
+    ▼
+Data Cleaning
+    │
+    ▼
+EDA
+    │
+    ▼
+Encoding
+    │
+    ▼
+Feature Scaling
+    │
+    ▼
+Train Test Split
+    │
+    ▼
+Random Forest Model
+    │
+    ▼
+Model Evaluation
+    │
+    ▼
+Model Saving
+    │
+    ▼
+Flask Deployment
+```
 
 ---
 
-## ▶️ How to Run
+# 📁 Project Structure
+
+```
+Customer-Churn-Prediction
+│
+├── app
+│   ├── app.py
+│   ├── templates
+│   │      └── index.html
+│   └── static
+│          ├── style.css
+│          └── script.js
+│
+├── data
+│
+├── models
+│   ├── churn_prediction_model.pkl
+│   └── scaler.pkl
+│
+├── notebooks
+│   └── Analysis.ipynb
+│
+├── reports
+│
+├── requirements.txt
+│
+└── README.md
+```
+
+---
+
+# 📈 Prediction Output
+
+The application predicts
+
+- Customer Churn Status
+- Prediction Probability
+- Risk Level
+- Recommendation
+
+---
+
+# 🖥 Application Screenshots
+
+## 🏠 Home Page
+
+> Add Screenshot Here
+
+---
+
+## 📊 Prediction Result
+
+> Add Screenshot Here
+
+---
+
+# ⚙ Installation
+
+Clone Repository
 
 ```bash
 git clone https://github.com/SonikareddyS/Customer-Churn-Prediction.git
+```
 
+Go to Project
+
+```bash
 cd Customer-Churn-Prediction
+```
 
+Install Requirements
+
+```bash
 pip install -r requirements.txt
+```
 
+Run Flask
+
+```bash
 cd app
 
 python app.py
 ```
 
-Open:
+Open Browser
 
 ```
 http://127.0.0.1:5000
@@ -90,19 +225,19 @@ http://127.0.0.1:5000
 
 ---
 
-## 📷 Screenshots
+# 📌 Future Improvements
 
-### Home Page
-
-(Add Screenshot)
-
-### Prediction Result
-
-(Add Screenshot)
+- XGBoost Model
+- Explainable AI (SHAP)
+- Dashboard Analytics
+- User Authentication
+- Database Integration
+- REST API
+- Cloud Deployment
 
 ---
 
-## 👩‍💻 Author
+# 👩‍💻 Author
 
 **Sonika S**
 
@@ -110,6 +245,12 @@ Information Science and Engineering
 
 Dayananda Sagar Academy of Technology and Management
 
+GitHub
+
+https://github.com/SonikareddyS
+
 ---
 
-⭐ If you like this project, don't forget to star this repository.
+## ⭐ Support
+
+If you found this project useful, please give it a ⭐ on GitHub.
