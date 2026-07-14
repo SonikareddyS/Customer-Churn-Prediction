@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Header ================= -->
+
+    <div class="header">
+
+        <div class="logo">
+            🏦
+        </div>
+
+        <div class="title">
+
+            <h1>Customer Churn Prediction</h1>
+
+            <p>AI Powered Banking Analytics</p>
+
+        </div>
+
+    </div>
+
+    <!-- ================= Form ================= -->
+
+    <form action="/predict" method="POST">
+
+        <input
+            type="number"
+            name="credit_score"
+            placeholder="Credit Score (300 - 900)"
+            min="300"
+            max="900"
+            required>
+
+        <select name="country" required>
+
+            <option value="">Select Country</option>
+
+            <option value="0">France</option>
+
+            <option value="1">Germany</option>
+
+            <option value="2">Spain</option>
+
+        </select>
+
+        <select name="gender" required>
+
+            <option value="">Select Gender</option>
+
+            <option value="1">Male</option>
+
+            <option value="0">Female</option>
+
+        </select>
+
+        <input
+            type="number"
+            name="age"
+            placeholder="Age"
+            min="18"
+            max="100"
+            required>
+
+        <input
+            type="number"
+            name="tenure"
+            placeholder="Tenure (0 - 10)"
+            min="0"
+            max="10"
+            required>
+
+        <input
+            type="number"
+            name="balance"
+            placeholder="Account Balance"
+            min="0"
+            step="0.01"
+            required>
+
+        <input
+            type="number"
+            name="products_number"
+            placeholder="Number of Products"
+            min="1"
+            max="4"
+            required>
+
+        <select name="credit_card" required>
+
+            <option value="1">Has Credit Card</option>
+
+            <option value="0">No Credit Card</option>
+
+        </select>
+
+        <select name="active_member" required>
+
+            <option value="1">Active Member</option>
+
+            <option value="0">Inactive Member</option>
+
+        </select>
+
+        <input
+            type="number"
+            name="estimated_salary"
+            placeholder="Estimated Salary"
+            min="0"
+            step="0.01"
+            required>
+
+        <button type="submit">
+
+            Predict Customer Churn
+
+        </button>
+
+    </form>
+
+    <!-- ================= Error ================= -->
+
+    {% if error %}
+
+    <div class="error-card">
+
+        <strong>Error:</strong><br>
+        {{ error }}
+
+    </div>
+
+    {% endif %}
+
+    <!-- ================= Prediction ================= -->
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>{{ prediction }}</h2>
+
+        <!-- Probability Card -->
+
+        <div class="card">
+
+            <h3>Prediction Probability</h3>
+
+            <div class="progress-container">
+
+                <div
+                    class="progress-bar"
+                    style="width: {{ probability }}%; background: {{ risk_color }};">
+
+                </div>
+
+            </div>
+
+            <p class="percentage">
+
+                {{ probability }}%
+
+            </p>
+
+        </div>
+
+        <!-- Risk Card -->
+
+        <div class="card">
+
+            <h3>Risk Level</h3>
+
+            <span
+                class="badge"
+                style="background: {{ risk_color }};">
+
+                {{ risk }}
+
+            </span>
+
+        </div>
+
+        <!-- Recommendation Card -->
+
+        <div class="card">
+
+            <h3>Recommendation</h3>
+
+            <p>{{ recommendation }}</p>
+
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <!-- ================= Footer ================= -->
+
+    <footer>
+
+        Built with ❤️ using Flask • Scikit-Learn • Python
+
+    </footer>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
