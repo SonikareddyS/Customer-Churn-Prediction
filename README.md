@@ -1,94 +1,78 @@
 # 🏦 Customer Churn Prediction using Machine Learning
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-![Flask](https://img.shields.io/badge/Flask-Web%20App-black)
-![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Flask](https://img.shields.io/badge/Flask-Web%20Application-black)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
+![Random Forest](https://img.shields.io/badge/Model-Random%20Forest-success)
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
 Customer Churn Prediction is a Machine Learning web application that predicts whether a bank customer is likely to leave the bank based on customer information.
 
-The project follows the complete Machine Learning lifecycle:
+The project demonstrates a complete Machine Learning pipeline, including:
 
-- Data Collection
-- Data Preprocessing
-- Exploratory Data Analysis (EDA)
-- Model Training
-- Model Evaluation
-- Model Deployment using Flask
+- 📂 Data Collection
+- 🧹 Data Preprocessing
+- 📊 Exploratory Data Analysis (EDA)
+- 🤖 Model Training
+- 📈 Model Evaluation
+- 🌐 Flask Web Deployment
 
 ---
 
 # 🚀 Features
 
-✅ Customer Churn Prediction
-
-✅ Churn Probability Score
-
-✅ Risk Level Detection
-
-✅ Personalized Recommendation
-
-✅ Input Validation
-
-✅ Responsive Web Interface
-
-✅ Machine Learning Integration
+- ✅ Customer Churn Prediction
+- ✅ Churn Probability Score
+- ✅ Risk Level Classification
+- ✅ Personalized Customer Recommendation
+- ✅ Input Validation
+- ✅ Responsive User Interface
+- ✅ Machine Learning Model Integration
 
 ---
 
 # 🛠 Tech Stack
 
-### Programming
-
+### Programming Language
 - Python
 
 ### Machine Learning
-
 - Scikit-Learn
 - Pandas
 - NumPy
 
 ### Data Visualization
-
 - Matplotlib
 - Seaborn
 
 ### Backend
-
 - Flask
 
 ### Frontend
-
 - HTML5
 - CSS3
 - JavaScript
 
-### Model Saving
-
+### Model Serialization
 - Joblib
 
 ---
 
-# 📊 Dataset Features
+# 📊 Dataset Summary
 
-| Feature | Description |
-|----------|-------------|
-| Credit Score | Customer Credit Score |
-| Country | France, Germany, Spain |
-| Gender | Male/Female |
-| Age | Customer Age |
-| Tenure | Years with Bank |
-| Balance | Account Balance |
-| Products Number | Bank Products Used |
-| Credit Card | Has Credit Card |
-| Active Member | Active Customer |
-| Estimated Salary | Estimated Annual Salary |
+| Property | Value |
+|----------|-------|
+| Dataset | Bank Customer Churn Dataset |
+| Total Records | 10,000 |
+| Training Samples | 8,000 |
+| Testing Samples | 2,000 |
+| Features Used | 10 |
+| Target Variable | Exited |
 
-### Target
+### Target Labels
 
 ```
 0 → Customer Stays
@@ -102,34 +86,66 @@ The project follows the complete Machine Learning lifecycle:
 
 ```
 Dataset
-    │
-    ▼
+   │
+   ▼
 Data Cleaning
-    │
-    ▼
-EDA
-    │
-    ▼
-Encoding
-    │
-    ▼
+   │
+   ▼
+Exploratory Data Analysis
+   │
+   ▼
+Label Encoding
+   │
+   ▼
 Feature Scaling
-    │
-    ▼
-Train Test Split
-    │
-    ▼
-Random Forest Model
-    │
-    ▼
+   │
+   ▼
+Train-Test Split
+   │
+   ▼
+Random Forest Classifier
+   │
+   ▼
 Model Evaluation
-    │
-    ▼
-Model Saving
-    │
-    ▼
+   │
+   ▼
+Model Serialization
+   │
+   ▼
 Flask Deployment
 ```
+
+---
+
+# 📈 Model Performance
+
+The final deployed model is a **Random Forest Classifier**.
+
+| Metric | Score |
+|---------|-------|
+| Accuracy | **86.30%** |
+| Precision | **78.54%** |
+| Recall | **44.96%** |
+| F1-Score | **57.19%** |
+| ROC-AUC Score | **70.91%** |
+
+---
+
+# 📊 Classification Report
+
+| Class | Precision | Recall | F1-Score |
+|------|----------:|-------:|---------:|
+| Customer Stays (0) | **0.87** | **0.97** | **0.92** |
+| Customer Churns (1) | **0.79** | **0.45** | **0.57** |
+
+---
+
+# 🔲 Confusion Matrix
+
+| Actual / Predicted | Stay | Churn |
+|-------------------|-----:|------:|
+| **Stay** | **1543** | **50** |
+| **Churn** | **224** | **183** |
 
 ---
 
@@ -164,14 +180,35 @@ Customer-Churn-Prediction
 
 ---
 
-# 📈 Prediction Output
+# 🔍 Sample Prediction
 
-The application predicts
+### Sample Customer Details
 
-- Customer Churn Status
-- Prediction Probability
-- Risk Level
-- Recommendation
+| Feature | Value |
+|---------|-------|
+| Credit Score | 560 |
+| Country | Germany |
+| Gender | Female |
+| Age | 55 |
+| Tenure | 2 Years |
+| Account Balance | ₹150,000 |
+| Number of Products | 1 |
+| Has Credit Card | No |
+| Active Member | No |
+| Estimated Salary | ₹65,000 |
+
+### Prediction Result
+
+- ⚠ **Customer is likely to Churn**
+- **Prediction Probability:** **76.09%**
+- **Risk Level:** **High Risk**
+
+### Recommendation
+
+- Offer loyalty rewards
+- Provide cashback offers
+- Assign a relationship manager
+- Increase customer engagement
 
 ---
 
@@ -179,45 +216,46 @@ The application predicts
 
 ## 🏠 Home Page
 
-> Add Screenshot Here
+<img width="1888" height="622" alt="image" src="https://github.com/user-attachments/assets/ad3d0d02-5885-455e-850a-6883de3e09d6" />
+
 
 ---
 
 ## 📊 Prediction Result
 
-> Add Screenshot Here
+<img width="1912" height="342" alt="image" src="https://github.com/user-attachments/assets/63546691-cc77-4123-ad81-47aaf9b6ea98" />
+
 
 ---
 
-# ⚙ Installation
+# ⚙ Installation & Usage
 
-Clone Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/SonikareddyS/Customer-Churn-Prediction.git
 ```
 
-Go to Project
+### 2. Navigate to the Project Folder
 
 ```bash
 cd Customer-Churn-Prediction
 ```
 
-Install Requirements
+### 3. Install Required Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run Flask
+### 4. Run the Flask Application
 
 ```bash
 cd app
-
 python app.py
 ```
 
-Open Browser
+### 5. Open in Browser
 
 ```
 http://127.0.0.1:5000
@@ -225,32 +263,27 @@ http://127.0.0.1:5000
 
 ---
 
-# 📌 Future Improvements
+# 🚀 Future Improvements
 
-- XGBoost Model
-- Explainable AI (SHAP)
-- Dashboard Analytics
+- Improve recall through hyperparameter tuning
+- Experiment with XGBoost and LightGBM
+- Explain predictions using SHAP
+- Interactive Analytics Dashboard
+- Docker Deployment
+- REST API Development
+- Cloud Database Integration
 - User Authentication
-- Database Integration
-- REST API
-- Cloud Deployment
 
 ---
 
-# 👩‍💻 Author
+# ⭐ Support
 
-**Sonika S**
-
-Information Science and Engineering
-
-Dayananda Sagar Academy of Technology and Management
-
-GitHub
-
-https://github.com/SonikareddyS
+If you found this project useful, please consider giving this repository a ⭐ on GitHub.
 
 ---
 
-## ⭐ Support
+## 📬 Contact
 
-If you found this project useful, please give it a ⭐ on GitHub.
+GitHub: https://github.com/SonikareddyS
+
+LinkedIn: https://www.linkedin.com/in/your-profile
